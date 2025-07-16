@@ -1,0 +1,17 @@
+name: my_project          # ✅ Required field - project name
+version: '1.0'
+config-version: 2
+
+profile: my_project       # ✅ Should match the profile name in profiles.yml
+
+model-paths: ["models"]
+
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
