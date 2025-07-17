@@ -2,7 +2,7 @@ name: informatica_json_project
 version: '1.0'
 config-version: 2
 
-profile: snowflake_profile
+profile: my_project
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
