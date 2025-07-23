@@ -1,8 +1,8 @@
 dbt_core_databricks:
   outputs:
     dev:
-      catalog: null
-      host:dbc-fa32949d-b800.cloud.databricks.com
+      catalog: main
+      host: dbc-fa32949d-b800.cloud.databricks.com
       http_path: /sql/1.0/warehouses/d0f6417961aee586
       schema: default
       threads: 1
