@@ -3,7 +3,7 @@ my_project:
   outputs:
     dev:
       type: snowflake
-      account: vkajtrk-dv04149          # ✅ No .snowflakecomputing.com
+      account: VKAJTRK-DV04149     # ✅ No .snowflakecomputing.com
       user: BHARATHI
       password: Bharathi123456789
       role: ACCOUNTADMIN                  # Optional, based on your setup
