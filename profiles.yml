@@ -8,6 +8,6 @@ my_project:
       password: Bharathi123456789
       role: ACCOUNTADMIN                  # Optional, based on your setup
       database: FIVETRAN_DATABASE
-      warehouse: dbt_wh
+      warehouse: COMPUTE_WH
       schema: TEST_PD_CONN
       threads: 4
