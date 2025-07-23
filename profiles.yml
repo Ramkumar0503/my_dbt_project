@@ -3,8 +3,8 @@ my_project:
   outputs:
     dev:
       type: databricks
-      catalog: workspace
-      schema: snowflake_data__public      # This is the schema dbt will write to
+      catalog: snowflake_data__public
+      schema: public     # This is the schema dbt will write to
       host: dbc-fa32949d-b800.cloud.databricks.com        # e.g. adb-1234567890123456.7.azuredatabricks.net
       http_path: /sql/1.0/warehouses/d0f6417961aee586        # From the Databricks SQL warehouse
       token: dapib312cc05d940e029aee272bfce48b2af  # Personal Access Token
