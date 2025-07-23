@@ -1,11 +1,13 @@
-my_project:
-  target: dev
+dbt_core_databricks:
   outputs:
     dev:
+      catalog: null
+      host:dbc-fa32949d-b800.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/d0f6417961aee586
+      schema: default
+      threads: 1
+      token: dapib312cc05d940e029aee272bfce48b2af
       type: databricks
-      catalog: snowflake_data__public
-      schema: public     # This is the schema dbt will write to
-      host: dbc-fa32949d-b800.cloud.databricks.com        # e.g. adb-1234567890123456.7.azuredatabricks.net
-      http_path: /sql/1.0/warehouses/d0f6417961aee586        # From the Databricks SQL warehouse
-      token: dapib312cc05d940e029aee272bfce48b2af  # Personal Access Token
-      threads: 4
+  target: dev
+
+      
