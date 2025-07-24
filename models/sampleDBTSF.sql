@@ -1,22 +1,15 @@
-{{
-	config(
-		materialized='incremental',
-		alias='TEST_PD_CONN.LOCATION',
-		schema='',
-		pre_hook ="",
-		post_hook ="",
-		incremental_strategy='append'
-	)
-}}
-Select
-	PROFILE_ID,
-    _FIVETRAN_SYNCED,
-    CITY,
-    COUNTRY,
-    STREET,
+SELECT
+    'LEI_' || LPAD('abc', 5, '0') AS O_LEGAL_ENTITY_IDENTIFIER,
+    PARTY_CODE_DISPLAY,
+    PARTY_CODE_PREFIX_ALT_DISPLAY,
+    UTI,
+    o_UPI,
     NPV,
-    LENGTH(_FIVETRAN_DELETED) as _FIVETRAN_DELETED,
-    STATE,
-    POSTCODE
-from
-	FIVETRAN_DATABASE.TEST_PD_CONN.LOCATION
+    LENGTH(CURRENCY_CODE) AS CURRENCY_CODE_LENGTH,  
+    CURRENCY_CODE,                                  
+    VALUATION_METHOD,
+    VALUATION_TIMESTAMP,
+    ACTION_TYPE,
+    Proprietary_UTI_indicator
+FROM
+    EXP_G20_SWP_VALUATIONSOut;
