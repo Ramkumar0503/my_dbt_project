@@ -9,5 +9,5 @@ my_project:
       role: ACCOUNTADMIN                  
       database: FIVETRAN_destination
       warehouse: COMPUTE_WH
-      schema: DATABRICKS_CONN_SNOWFLAKE_DATA_PUBLIC
+      schema: DATABRICKS_CONN_SNOWFLAKE_DATA__PUBLIC
       threads: 4
