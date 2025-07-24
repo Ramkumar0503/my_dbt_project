@@ -1,3 +1,8 @@
+{{ config(
+    materialized='view',
+    database='FIVETRAN_DESTINATION',
+    schema='DATABRICKS_CONN_FIVETRAN_METADATA'
+) }}
 SELECT
     'LEI_' || LPAD('abc', 5, '0') AS O_LEGAL_ENTITY_IDENTIFIER,
     PARTY_CODE_DISPLAY,
