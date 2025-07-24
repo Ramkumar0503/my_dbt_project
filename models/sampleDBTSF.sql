@@ -12,4 +12,4 @@ SELECT
     ACTION_TYPE,
     Proprietary_UTI_indicator
 FROM
-    EXP_G20_SWP_VALUATIONSOut;
+    EXP_G20_SWP_VALUATIONSOut
