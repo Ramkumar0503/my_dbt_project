@@ -16,4 +16,3 @@ models:
   informatica_json_project:
     +materialized: view
     +database: FIVETRAN_DESTINATION
-    +schema: DATABRICKS_CONN_SNOWFLAKE_DATA__PUBLIC
