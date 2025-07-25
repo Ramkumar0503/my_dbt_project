@@ -6,8 +6,8 @@ my_project:
       account: VKAJTRK-DV04149    
       user: BHARATHI
       password: Bharathi123456789
-      role: ACCOUNTADMIN                  
-      database: FIVETRAN_destination
+      role: SYSADMIN                 
+      database: FIVETRAN_DATABASE
       warehouse: COMPUTE_WH
       schema: DATABRICKS_CONN_SNOWFLAKE_DATA__PUBLIC
       threads: 4
