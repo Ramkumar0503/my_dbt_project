@@ -15,4 +15,4 @@ clean-targets:
 models:
   informatica_json_project:
     +materialized: view
-    +database: FIVETRAN_DESTINATION
+    +database: FIVETRAN_DATABASE
