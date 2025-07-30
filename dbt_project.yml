@@ -15,4 +15,4 @@ clean-targets:
 models:
   informatica_json_project:
     +materialized: table
-    +database: SNOWFLAKE_LEARNING_DB
+    +database: FIVETRAN_CONNECTION
