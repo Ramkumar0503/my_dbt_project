@@ -14,6 +14,10 @@ clean-targets:
 
 models:
   informatica_json_project:
-    +materialized: table
-    +database: SNOWFLAKE_LEARNING_DB
+    models:
+  informatica_json_project:
+    sample_1:
+      +schema: sample_schema_1
+    sample_2:
+      +schema: sample_schema_2
 
