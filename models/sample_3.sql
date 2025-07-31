@@ -9,7 +9,7 @@ Select
     NPV,
     LENGTH(CURRENCY_CODE) as CURRENCY_CODE,
     VALUATION_METHOD,
-	LENGTH(VALUATION_METHOD)  as Length_val_method
+    LENGTH(VALUATION_METHOD)  as Length_val_method,
     VALUATION_TIMESTAMP,
     ACTION_TYPE,
     Proprietary_UTI_indicator
