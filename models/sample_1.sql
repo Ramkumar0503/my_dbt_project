@@ -1,5 +1,3 @@
-{{ config(materialized='view', alias='EXP_G20_SWP_VALUATIONSOut_1') }}
--- or change the file name itself
 
 Select
 	'LEI_' || LPAD('abc', 5, '0') as O_LEGAL_ENTITY_IDENTIFIER,
