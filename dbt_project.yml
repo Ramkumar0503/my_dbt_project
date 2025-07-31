@@ -14,10 +14,5 @@ clean-targets:
 
 models:
   informatica_json_project:
-    models:
-  informatica_json_project:
-    sample_1:
-      +schema: sample_schema_1
-    sample_2:
-      +schema: sample_schema_2
+   +materialized: view
 
