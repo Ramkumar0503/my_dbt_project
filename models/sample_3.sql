@@ -1,4 +1,4 @@
-{{ config(materialized='view', alias='EXP_G20_SWP_VALUATIONSOut_2') }}
+{{ config(materialized='view', alias='EXP_G20_SWP_VALUATIONSOut_3') }}
 
 Select
 	'LEI_' || LPAD('abc', 5, '0') as O_LEGAL_ENTITY_IDENTIFIER,
