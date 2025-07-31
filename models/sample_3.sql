@@ -1,13 +1,5 @@
-{{
-	config(
-		materialized='incremental',
-		alias='EXP_G20_SWP_VALUATIONSOut',
-		schema='',
-		pre_hook ="",
-		post_hook ="",
-		incremental_strategy='append'
-	)
-}}
+{{ config(materialized='view', alias='EXP_G20_SWP_VALUATIONSOut_2') }}
+
 Select
 	'LEI_' || LPAD('abc', 5, '0') as O_LEGAL_ENTITY_IDENTIFIER,
     PARTY_CODE_DISPLAY,
