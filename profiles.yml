@@ -7,7 +7,7 @@ my_project:
       user: Ramkumar
       password: Ramkumar@123456789
       role: ACCOUNTADMIN                
-      database: SNOWFLAKE_LEARNING_DB
+      database: FIVETRAN_SNOWFLAKE_CONNECTION
       warehouse: COMPUTE_WH
-      schema: SNF_SNF_DATABRICKS_CONN_SNF_SNOWFLAKE_DATA__PUBLIC_
+      schema: SNOWFLAKE_API_CONN_DATABRICKS_CONN_SNF_SNOWFLAKE_DATA__PUBLIC_
       threads: 4
