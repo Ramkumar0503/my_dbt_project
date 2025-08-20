@@ -3,11 +3,12 @@ my_project:
   outputs:
     dev:
       type: snowflake
-      account: GHTGEWC-BZ77114  
-      user: Ramkumar
-      password: Ramkumar@123456789
+      account: HJZXKHV-EA71750
+      user: Surya
+      password: Surya@123456789
       role: ACCOUNTADMIN                
-      database: FIVETRAN_SNOWFLAKE_CONNECTION
+      database: FIVETRAN_DATABASE
       warehouse: COMPUTE_WH
-      schema: SNOWFLAKE_API_CONN_DATABRICKS_CONN_SNF_SNOWFLAKE_DATA__PUBLIC_
+      schema: TEST_CONN_26_DEMO_SCHEMA
       threads: 4
+
