@@ -10,7 +10,8 @@ my_project:
       role: ACCOUNTADMIN                
       database: FIVETRAN_DATABASE
       warehouse: COMPUTE_WH
-      schema: CONN_SNOWFLAKE_14_DEMO_SCHEMA
+      schema: CONN_SNOWFLAKE_15_DEMO_SCHEMA
       threads: 4
+
 
 
