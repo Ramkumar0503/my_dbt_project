@@ -1,3 +1,4 @@
+
 my_project:
   target: dev
   outputs:
@@ -9,6 +10,12 @@ my_project:
       role: ACCOUNTADMIN                
       database: FIVETRAN_DATABASE
       warehouse: COMPUTE_WH
-      schema: CONN_SNOWFLAKE_18_DEMO_SCHEMA
+      schema: CONN_SNOWFLAKE_19_DEMO_SCHEMA
       threads: 4
+
+
+
+
+
+
 
