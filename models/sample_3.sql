@@ -1,15 +1,11 @@
-{{
-	config(
-		materialized='incremental',
-		alias='EXP_G20_SWP_VALUATIONSOUT_3',
-		schema='',
-		pre_hook ="",
-		post_hook ="",
-		incremental_strategy='append'
-	)
-}}
-Select
-	'LEI_' || LPAD('abc', 5, '0') as O_LEGAL_ENTITY_IDENTIFIER,
+{{ config(
+    materialized='incremental',
+    alias='EXP_G20_SWP_VALUATIONSOUT_3',
+    schema='',
+    incremental_strategy='append'
+) }}
+select
+    'LEI_' || LPAD('abc', 5, '0') as O_LEGAL_ENTITY_IDENTIFIER,
     PARTY_CODE_DISPLAY,
     PARTY_CODE_PREFIX_ALT_DISPLAY,
     UTI,
@@ -17,9 +13,8 @@ Select
     NPV,
     LENGTH(CURRENCY_CODE) as CURRENCY_CODE,
     VALUATION_METHOD,
-	LENGTH(VALUATION_METHOD)  as Length_val_method
-    VALUATION_TIMESTAMP,
+    LENGTH(VALUATION_METHOD) as LENGTH_VAL_METHOD,
+    "VALUATION_TIMESTAMP",
     ACTION_TYPE,
     Proprietary_UTI_indicator
-from
-	EXP_G20_SWP_VALUATIONSOut
+from {{ ref('EXP_G20_SWP_VALUATIONSOUT_2') }}
