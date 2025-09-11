@@ -1,7 +1,7 @@
 {{
 	config(
 		materialized='incremental',
-		alias='EXP_G20_SWP_VALUATIONSOut_1',
+		alias='EXP_G20_SWP_VALUATIONSOut',
 		schema='',
 		pre_hook ="",
 		post_hook ="",
@@ -21,5 +21,4 @@ Select
     ACTION_TYPE,
     Proprietary_UTI_indicator
 from
-
 	EXP_G20_SWP_VALUATIONSOut
