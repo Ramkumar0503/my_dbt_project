@@ -1,7 +1,7 @@
 {{
 	config(
 		materialized='incremental',
-		alias='EXP_G20_SWP_VALUATIONSOuT_1',
+		alias='EXP_G20_SWP_VALUATIONSOUT_1',
 		schema='',
 		pre_hook ="",
 		post_hook ="",
@@ -23,3 +23,4 @@ Select
 from
 
 	EXP_G20_SWP_VALUATIONSOut
+
