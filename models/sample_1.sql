@@ -1,10 +1,8 @@
-{{
-    config(
-        materialized='table',   -- or 'incremental' if you want incremental
-        alias='EXP_G20_SWP_VALUATIONSOUT_FINAL',
-        schema=''
-    )
-}}
+{{- config(
+    materialized='table',   -- or 'incremental'
+    alias='EXP_G20_SWP_VALUATIONSOUT_FINAL',
+    schema=''
+) -}}
 
 WITH base_data AS (
     SELECT
@@ -32,5 +30,4 @@ summary AS (
     GROUP BY O_LEGAL_ENTITY_IDENTIFIER
 )
 
--- 👇 Choose the final output
 SELECT * FROM summary;
