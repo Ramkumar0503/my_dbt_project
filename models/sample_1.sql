@@ -1,8 +1,8 @@
-{{- config(
-    materialized='table',   -- or 'incremental'
+{{ config(
+    materialized='table',
     alias='EXP_G20_SWP_VALUATIONSOUT_FINAL',
     schema=''
-) -}}
+) }}
 
 WITH base_data AS (
     SELECT
