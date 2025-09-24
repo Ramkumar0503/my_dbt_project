@@ -1,7 +1,7 @@
 {{ config(
     materialized = 'table',
     alias = 'EXP_G20_SWP_VALUATIONSOUT_FINAL',
-    schema = 'ANALYTICS'  -- ✅ replace with your target schema
+    schema = 'ANALYTICS'  
 ) }}
 
 WITH base_data AS (
@@ -48,3 +48,4 @@ summary AS (
 
 SELECT *
 FROM summary
+
