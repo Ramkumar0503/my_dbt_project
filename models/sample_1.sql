@@ -1,51 +1,37 @@
 {{ config(
-    materialized = 'table',
-    alias = 'EXP_G20_SWP_VALUATIONSOUT_FINAL',
-    schema = 'ANALYTICS'  
+    materialized='incremental',
+    unique_key='valuation_id',
+    incremental_strategy='merge',
+    on_schema_change='sync_all_columns'
 ) }}
 
-WITH base_data AS (
-    SELECT
-        'LEI_' || LPAD('abc', 5, '0') AS O_LEGAL_ENTITY_IDENTIFIER,
-        LENGTH(PARTY_CODE_DISPLAY) AS CODE_DISPLAY,
-        PARTY_CODE_PREFIX_ALT_DISPLAY,
-        UTI,
-        O_UPI,
-        NPV,
-        LENGTH(CAST(CURRENCY_CODE AS STRING)) AS CURRENCY_CODE_LEN,
-        VALUATION_METHOD,
-        VALUATION_TIMESTAMP,
-        ACTION_TYPE,
-        PROPRIETARY_UTI_INDICATOR
-    FROM {{ source('FIVETRAN_DATABASE', 'EXP_G20_SWP_VALUATIONSOUT') }}
+with demo as (
+    select 
+        valuation_id,
+        amount as demo_amount,
+        valuation_date as demo_date
+    from {{ source('snowflake_source_demo_schema', 'EXP_G20_SWP_VALUATIONSOUT') }}
 ),
 
-session_data AS (
-    SELECT
-        SESSION_ID,
-        USER_ID,
-        DEVICE,
-        START_TIME,
-        END_TIME,
-        SUCCESS,
-        IP_ADDRESS
-    FROM {{ source('FIVETRAN_DATABASE_2', 'EXP_G20_SWP_VALUATIONSOUT_301') }}
-),
-
-summary AS (
-    SELECT
-        b.O_LEGAL_ENTITY_IDENTIFIER,
-        COUNT(*) AS TOTAL_RECORDS,
-        SUM(b.NPV) AS TOTAL_NPV,
-        MAX(b.VALUATION_TIMESTAMP) AS LAST_VALUATION_TS,
-        COUNT(DISTINCT s.USER_ID) AS UNIQUE_USERS,
-        COUNT(DISTINCT s.SESSION_ID) AS TOTAL_SESSIONS
-    FROM base_data b
-    LEFT JOIN session_data s
-        ON b.O_UPI = s.USER_ID   -- 🔗 adjust join key if different
-    GROUP BY b.O_LEGAL_ENTITY_IDENTIFIER
+abc as (
+    select 
+        valuation_id,
+        amount as abc_amount,
+        valuation_date as abc_date
+    from {{ source('snowflake_source_2_abc', 'EXP_G20_SWP_VALUATIONSOUT_301') }}
 )
 
-SELECT *
-FROM summary
+select 
+    d.valuation_id,
+    d.demo_amount,
+    a.abc_amount,
+    -- expression logic: difference between amounts
+    (a.abc_amount - d.demo_amount) as amount_diff,
+    coalesce(a.abc_date, d.demo_date) as final_date
+from demo d
+left join abc a 
+    on d.valuation_id = a.valuation_id
 
+{% if is_incremental() %}
+  where coalesce(a.abc_date, d.demo_date) > (select max(final_date) from {{ this }})
+{% endif %}
