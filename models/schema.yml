@@ -7,8 +7,6 @@ sources:
     tables:
       - name: LKPTRANS_1
       - name: DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
-      - name: sn_sn_c12
-      - name: sn_sn_c11
       - name: EXP_G20_SWP_VALUATIONSOUT_1
       - name: EXP_G20_SWP_VALUATIONSOUT_301
       - name: LKPTRANS1_1
@@ -33,8 +31,6 @@ sources:
     tables:
       - name: LKPTRANS_1
       - name: DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
-      - name: sn_sn_c12
-      - name: sn_sn_c11
       - name: EXP_G20_SWP_VALUATIONSOUT_1
       - name: EXP_G20_SWP_VALUATIONSOUT_301
       - name: LKPTRANS1_1
