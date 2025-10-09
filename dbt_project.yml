@@ -14,5 +14,9 @@ clean-targets:
 
 models:
   informatica_json_project:
+    m_EXP_valuation:
+      +materialized: table
+      +schema: FIVETRAN_DB
+      +enabled: true
    +materialized: view
 
