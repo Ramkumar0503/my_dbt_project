@@ -1,9 +1,33 @@
 version: 2
 
 sources:
-  - name: sn_sn_c40
+  - name: sn_sn_cn01
     database: FIVETRAN_DB
-    schema: SN_SN_C40_DEMO_SCHEMA
+    schema: SN_SN_CN01_DEMO_SCHEMA
+    tables:
+      - name: LKPTRANS_1
+      - name: DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
+      - name: EXP_G20_SWP_VALUATIONSOUT_1
+      - name: EXP_G20_SWP_VALUATIONSOUT_301
+      - name: LKPTRANS1_1
+      - name: FILTRANSOut
+      - name: EXP_G20_SWP_VALUATIONSOUT1
+      - name: EXPTRANSOut
+      - name: EXP_G20_SWP_VALUATIONSOUTOut
+      - name: SQ_EXP_G20_SWP_VALUATIONSOUTOut
+      - name: LKPTRANS1Out
+      - name: EXP_G20_SWP_VALUATIONSOUT
+      - name: DSR_FILTRANSOut
+      - name: EXP_G20_SWP_VALUATIONSOUT_1_S10Out
+      - name: EXPTRANS1Out
+      - name: EXP_G20_SWP_VALUATIONSOUT2Out
+      - name: LKPTRANSOut
+      - name: EXP_G20_SWP_VALUATIONSOUT_1Out
+      - name: SQ_EXP_G20_SWP_VALUATIONSOUT_301Out
+
+  - name: sn_sn_cn02
+    database: FIVETRAN_DB
+    schema: SN_SN_CN02_ABC
     tables:
       - name: LKPTRANS_1
       - name: DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
