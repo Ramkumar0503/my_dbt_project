@@ -17,7 +17,6 @@ sources:
       - name: SQ_EXP_G20_SWP_VALUATIONSOUTOut
       - name: LKPTRANS1Out
       - name: EXP_G20_SWP_VALUATIONSOUT
-      - name: sn_sn_c29
       - name: DSR_FILTRANSOut
       - name: EXP_G20_SWP_VALUATIONSOUT_1_S10Out
       - name: EXPTRANS1Out
