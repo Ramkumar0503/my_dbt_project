@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: sn_sn_cn7
+  - name: sn_sn_cn23
     database: FIVETRAN_DB
-    schema: SN_SN_CN7_DEMO_SCHEMA
+    schema: SN_SN_CN23_DEMO_SCHEMA
     tables:
       - name: LKPTRANS_1
       - name: DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
@@ -16,6 +16,7 @@ sources:
       - name: EXP_G20_SWP_VALUATIONSOUTOut
       - name: SQ_EXP_G20_SWP_VALUATIONSOUTOut
       - name: LKPTRANS1Out
+      - name: sn_sn_cn7
       - name: sn_sn_cn01
       - name: EXP_G20_SWP_VALUATIONSOUT
       - name: sn_sn_c29
