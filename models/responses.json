@@ -1,0 +1,307 @@
+[
+{
+  "timestamp": "2025-09-24T10:55:27.9978311",
+  "operation": "groups",
+  "method": "POST",
+  "endpoint": "groups",
+  "requestPayload": "{\"name\": \"sn_sn_37\"}",
+  "statusCode": 201,
+  "responseBody": "{\"code\":\"Success\",\"message\":\"Group has been created\",\"data\":{\"id\":\"storming_boasting\",\"name\":\"sn_sn_37\",\"created_at\":\"2025-09-24T05:25:24.482005Z\"}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:55:46.1225015",
+  "operation": "Create Destination: Snowflake",
+  "method": "POST",
+  "endpoint": "destinations",
+  "requestPayload": "{
+    \"group_id\": \"storming_boasting\",
+    \"service\": \"snowflake\",
+    \"region\": \"AWS_US_EAST_1\",
+    \"time_zone_offset\": \"+5\",
+    \"trust_certificates\": true,
+    \"trust_fingerprints\": true,
+    \"run_setup_tests\": true,
+    \"daylight_saving_time_enabled\": true,
+    \"networking_method\": \"Directly\",
+    \"config\": {
+        \"auth\": \"PASSWORD\",
+        \"user\": \"Nandhini\",
+        \"password\": \"Nandhini@251296\",
+        \"host\": \"QQDFEJA-NK18847.snowflakecomputing.com\",
+        \"port\": 443,
+        \"database\": \"FIVETRAN_DB\",
+        \"warehouse\": \"ACCOUNTADMIN\",
+        \"role\": \"ACCOUNTADMIN\",
+        \"default_column_case\": \"lower\"
+    }
+}",
+  "statusCode": 201,
+  "responseBody": "{\"code\":\"Success\",\"message\":\"Destination has been created\",\"data\":{\"id\":\"storming_boasting\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake\",\"region\":\"AWS_US_EAST_1\",\"time_zone_offset\":\"+5\",\"setup_status\":\"connected\",\"daylight_saving_time_enabled\":true,\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"setup_tests\":[{\"title\":\"Database Connection\",\"status\":\"PASSED\",\"message\":\"\"},{\"title\":\"Default Warehouse Test\",\"status\":\"PASSED\",\"message\":\"\"},{\"title\":\"Validate privileges on storage integration\",\"status\":\"SKIPPED\",\"message\":\"\"},{\"title\":\"Validate Passphrase\",\"status\":\"SKIPPED\",\"message\":\"\"},{\"title\":\"Permission Test\",\"status\":\"PASSED\",\"message\":\"\"},{\"title\":\"Validate customer's storage credentials\",\"status\":\"SKIPPED\",\"message\":\"\"},{\"title\":\"Validate External Stage Configuration\",\"status\":\"SKIPPED\",\"message\":\"\"},{\"title\":\"Host Connection\",\"status\":\"PASSED\",\"message\":\"\"}],\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"aws_secret_access_key\":\"******\",\"use_customer_staging\":false,\"external_storage_cloud_provider\":\"INTERNAL_STAGE\",\"database\":\"FIVETRAN_DB\",\"password\":\"******\",\"aws_bucket_auth_type\":\"IAM_USER\",\"port\":\"443\",\"enable_external_storage_for_unstructured_files\":false,\"host\":\"QQDFEJA-NK18847.snowflakecomputing.com\",\"enable_remote_execution\":false,\"external_stage_storage_provider\":\"INTERNAL\",\"user\":\"Nandhini\"}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:55:52.3937326",
+  "operation": "Create Connection: sn_sn_37",
+  "method": "POST",
+  "endpoint": "connections",
+  "requestPayload": "{
+    \"group_id\": \"storming_boasting\",
+    \"service\": \"snowflake_db\",
+    \"region\": \"AWS_US_EAST_1\",
+    \"time_zone_offset\": \"+05:30\",
+    \"trust_certificates\": true,
+    \"trust_fingerprints\": true,
+    \"run_setup_tests\": true,
+    \"paused\": false,
+    \"pause_after_trial\": false,
+    \"sync_frequency\": 1440,
+    \"networking_method\": \"Directly\",
+    \"config\": {
+        \"auth\": \"PASSWORD\",
+        \"user\": \"Varsh27\",
+        \"password\": \"Varshini123456789\",
+        \"host\": \"RXAVKTC-SW74494.snowflakecomputing.com\",
+        \"port\": 443,
+        \"database\": \"FIVETRAN_DATABASE\",
+        \"schema\": \"DEMO_SCHEMA\",
+        \"role\": \"ACCOUNTADMIN\",
+        \"connection_type\": \"Directly\",
+        \"schema_prefix\": \"sn_sn_37\"
+    }
+}",
+  "statusCode": 201,
+  "responseBody": "{\"code\":\"Success\",\"message\":\"Connection has been created\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":null,\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"scheduled\",\"update_state\":\"on_schedule\",\"is_historical_sync\":true,\"tasks\":[],\"warnings\":[]},\"setup_tests\":[{\"title\":\"Database Connection\",\"status\":\"PASSED\",\"message\":\"\"},{\"title\":\"Validate Passphrase\",\"status\":\"SKIPPED\",\"message\":\"\"},{\"title\":\"Workspace Test\",\"status\":\"SKIPPED\",\"message\":\"\"},{\"title\":\"Host Connection\",\"status\":\"PASSED\",\"message\":\"\"},{\"title\":\"Permission Test\",\"status\":\"PASSED\",\"message\":\"\"}],\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:55:55.1295495",
+  "operation": "Trigger Initial Sync: sn_sn_37",
+  "method": "POST",
+  "endpoint": "connections/murkiness_quantity/force",
+  "requestPayload": "{}",
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"message\":\"Sync has been successfully triggered for connection with id 'murkiness_quantity'\"}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:55:57.3562927",
+  "operation": "Get Connection Status: murkiness_quantity",
+  "method": "GET",
+  "endpoint": "connections/murkiness_quantity",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":null,\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"syncing\",\"update_state\":\"on_schedule\",\"is_historical_sync\":true,\"tasks\":[],\"warnings\":[]},\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:56:09.5651931",
+  "operation": "Get Connection Status: murkiness_quantity",
+  "method": "GET",
+  "endpoint": "connections/murkiness_quantity",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":null,\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"syncing\",\"update_state\":\"on_schedule\",\"is_historical_sync\":true,\"tasks\":[],\"warnings\":[]},\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:56:21.2177796",
+  "operation": "Get Connection Status: murkiness_quantity",
+  "method": "GET",
+  "endpoint": "connections/murkiness_quantity",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":null,\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"syncing\",\"update_state\":\"on_schedule\",\"is_historical_sync\":true,\"tasks\":[],\"warnings\":[{\"code\":\"snowflake_discontinuing_password_auth\",\"message\":\"Snowflake is discontinuing username/password authentication\",\"details\":{}}]},\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:56:38.1930288",
+  "operation": "Get Connection Status: murkiness_quantity",
+  "method": "GET",
+  "endpoint": "connections/murkiness_quantity",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":null,\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"syncing\",\"update_state\":\"on_schedule\",\"is_historical_sync\":true,\"tasks\":[],\"warnings\":[{\"code\":\"duplicate_columns\",\"message\":\"Duplicate Columns\",\"details\":{}},{\"code\":\"snowflake_discontinuing_password_auth\",\"message\":\"Snowflake is discontinuing username/password authentication\",\"details\":{}}]},\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:56:52.5165608",
+  "operation": "Get Connection Status: murkiness_quantity",
+  "method": "GET",
+  "endpoint": "connections/murkiness_quantity",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":null,\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"syncing\",\"update_state\":\"on_schedule\",\"is_historical_sync\":true,\"tasks\":[],\"warnings\":[{\"code\":\"duplicate_columns\",\"message\":\"Duplicate Columns\",\"details\":{}},{\"code\":\"snowflake_discontinuing_password_auth\",\"message\":\"Snowflake is discontinuing username/password authentication\",\"details\":{}}]},\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:03.7864495",
+  "operation": "Get Connection Status: murkiness_quantity",
+  "method": "GET",
+  "endpoint": "connections/murkiness_quantity",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":\"2025-09-24T05:26:50.459000Z\",\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"scheduled\",\"update_state\":\"on_schedule\",\"is_historical_sync\":false,\"tasks\":[],\"warnings\":[{\"code\":\"duplicate_columns\",\"message\":\"Duplicate Columns\",\"details\":{}},{\"code\":\"snowflake_discontinuing_password_auth\",\"message\":\"Snowflake is discontinuing username/password authentication\",\"details\":{}}]},\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:05.5270616",
+  "operation": "Check Connection Operational",
+  "method": "GET",
+  "endpoint": "connections/murkiness_quantity",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"murkiness_quantity\",\"group_id\":\"storming_boasting\",\"service\":\"snowflake_db\",\"service_version\":0,\"schema\":\"sn_sn_37\",\"connected_by\":\"enamel_corn\",\"created_at\":\"2025-09-24T05:25:44.748958Z\",\"succeeded_at\":\"2025-09-24T05:26:50.459000Z\",\"failed_at\":null,\"paused\":false,\"pause_after_trial\":false,\"sync_frequency\":1440,\"data_delay_threshold\":0,\"data_delay_sensitivity\":\"NORMAL\",\"private_link_id\":null,\"networking_method\":\"Directly\",\"proxy_agent_id\":null,\"schedule_type\":\"auto\",\"status\":{\"setup_state\":\"connected\",\"sync_state\":\"scheduled\",\"update_state\":\"on_schedule\",\"is_historical_sync\":false,\"tasks\":[],\"warnings\":[{\"code\":\"duplicate_columns\",\"message\":\"Duplicate Columns\",\"details\":{}},{\"code\":\"snowflake_discontinuing_password_auth\",\"message\":\"Snowflake is discontinuing username/password authentication\",\"details\":{}}]},\"config\":{\"role\":\"ACCOUNTADMIN\",\"connection_type\":\"Directly\",\"auth\":\"PASSWORD\",\"database\":\"FIVETRAN_DATABASE\",\"password\":\"******\",\"is_private_key_encrypted\":false,\"port\":443,\"host\":\"RXAVKTC-SW74494.snowflakecomputing.com\",\"user\":\"Varsh27\",\"use_workspace\":false}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:12.8225022",
+  "operation": "Create Transformation Project: SN_SN_37_DEMO_SCHEMA",
+  "method": "POST",
+  "endpoint": "transformation-projects",
+  "requestPayload": "{
+    \"type\": \"DBT_CORE\",
+    \"run_tests\": true,
+    \"group_id\": \"storming_boasting\",
+    \"project_config\": {
+        \"dbt_version\": \"1.10.3\",
+
+        \"default_schema\": \"SN_SN_37_DEMO_SCHEMA\",
+        \"git_remote_url\": \"git@github.com:Ramkumar0503/my_dbt_project.git\",
+        \"git_branch\": \"main\",
+        \"threads\": 4,
+        \"target_name\": \"dev\",
+        \"environment_vars\": [
+
+        \"DBT_ENV=production\"
+        ]
+    }
+}",
+  "statusCode": 201,
+  "responseBody": "{\"code\":\"Success\",\"message\":\"Transformation project created successfully\",\"data\":{\"id\":\"subsonic_providential\",\"created_at\":\"2025-09-24T05:27:08.406000Z\",\"created_by_id\":\"enamel_corn\",\"group_id\":\"storming_boasting\",\"type\":\"DBT_CORE\",\"status\":\"NOT_READY\",\"setup_tests\":[{\"title\":\"Connect to repository\",\"status\":\"FAILED\",\"message\":\"Can't get latest revision from repository: git@github.com:Ramkumar0503/my_dbt_project.git: Cannot log in at github.com:22\npublickey: trying ssh-rsa key SHA256:1iAmAEME99tEsyVo0JwVdGRtgKLhOuc8QKbiRp7MxS0 with signature type rsa-sha2-512\npublickey: no more keys to try\"},{\"title\":\"Validate environment variables\",\"status\":\"PASSED\",\"message\":\"Finished successfully. We found valid environment variables: 1\"},{\"title\":\"Validate credentials\",\"status\":\"PASSED\",\"message\":\"\"}],\"project_config\":{\"dbt_version\":\"1.10.3\",\"default_schema\":\"SN_SN_37_DEMO_SCHEMA\",\"git_remote_url\":\"git@github.com:Ramkumar0503/my_dbt_project.git\",\"folder_path\":null,\"git_branch\":\"main\",\"threads\":4,\"target_name\":\"dev\",\"environment_vars\":[\"DBT_ENV=production\"],\"public_key\":\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLMI7A1jGDKVhMtn+0WnNBwdhS1lyxemKVZTuo/5ZfzYtNWUkjKiRpIpEB2y/nmFJZTUwCL2nPkgUtKgScctuS7Rs5z3SV2CTGkzUn9BVte0hWiPJgW1JtOyVivKIAxqnK5MlnVxNqbd6iX9A6LsBq4u9Ljj2ak8bscGMid0nEeOplT4gm3UBl4WdOWP2iHhYPXx0wuFnzn+BzqyZcqmfUgkJZ1fRO8/7iBSZ3na9+UGEYaosf5p+G4AwNKS9uTLbX6goO3hqHn2stvffP9EfP0QWt+NySzC+XHLmjoXyqx7tpOYTZJSwBvBYSwK/yZdxmkJ0EACQH1akasGeD4pucKaKpPZuJo7HrJTqSt0kGSu5Yhv5EWK/1HG4ZPEzSpZLoRb2jasx6AipOLapoet+WhDjmesmPL0hHsjTy+JUMBsuq/S2O2g3ALNvcPFhQkXVunH8lEUwavdKGwQs9lxnjGfPlP5g4rlaIm4qFl47pMexAtD93WoEXZwxNGzuE+p/oVeaVytGCPTw77f4twkMkz2nXkLyILm4TaqbY8Ya9aKFHDUrGwKU2+lhWKGuYpoGeQeb1O8G/edrREw+30ly6SXU0ciIeKAVjH9SnQFqDzmH3lUMVnD5YD5Wy83FTIV0kr2Ir5SSZEShoP4bjV+ZurLDhasXddCeBWWHCB0/wCQ== Thilak@dataswitch.co\n\"}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:17.9850173",
+  "operation": "Test Transformation Project: subsonic_providential",
+  "method": "POST",
+  "endpoint": "transformation-projects/subsonic_providential/test",
+  "requestPayload": "",
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"subsonic_providential\",\"created_at\":\"2025-09-24T05:27:08.406000Z\",\"created_by_id\":\"enamel_corn\",\"group_id\":\"storming_boasting\",\"type\":\"DBT_CORE\",\"status\":\"NOT_READY\",\"setup_tests\":[{\"title\":\"Validate environment variables\",\"status\":\"PASSED\",\"message\":\"Finished successfully. We found valid environment variables: 1\"},{\"title\":\"Validate credentials\",\"status\":\"PASSED\",\"message\":\"\"},{\"title\":\"Connect to repository\",\"status\":\"PASSED\",\"message\":\"\"}],\"project_config\":{\"dbt_version\":\"1.10.3\",\"default_schema\":\"SN_SN_37_DEMO_SCHEMA\",\"git_remote_url\":\"git@github.com:Ramkumar0503/my_dbt_project.git\",\"folder_path\":null,\"git_branch\":\"main\",\"threads\":4,\"target_name\":\"dev\",\"environment_vars\":[\"DBT_ENV=production\"],\"public_key\":\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLMI7A1jGDKVhMtn+0WnNBwdhS1lyxemKVZTuo/5ZfzYtNWUkjKiRpIpEB2y/nmFJZTUwCL2nPkgUtKgScctuS7Rs5z3SV2CTGkzUn9BVte0hWiPJgW1JtOyVivKIAxqnK5MlnVxNqbd6iX9A6LsBq4u9Ljj2ak8bscGMid0nEeOplT4gm3UBl4WdOWP2iHhYPXx0wuFnzn+BzqyZcqmfUgkJZ1fRO8/7iBSZ3na9+UGEYaosf5p+G4AwNKS9uTLbX6goO3hqHn2stvffP9EfP0QWt+NySzC+XHLmjoXyqx7tpOYTZJSwBvBYSwK/yZdxmkJ0EACQH1akasGeD4pucKaKpPZuJo7HrJTqSt0kGSu5Yhv5EWK/1HG4ZPEzSpZLoRb2jasx6AipOLapoet+WhDjmesmPL0hHsjTy+JUMBsuq/S2O2g3ALNvcPFhQkXVunH8lEUwavdKGwQs9lxnjGfPlP5g4rlaIm4qFl47pMexAtD93WoEXZwxNGzuE+p/oVeaVytGCPTw77f4twkMkz2nXkLyILm4TaqbY8Ya9aKFHDUrGwKU2+lhWKGuYpoGeQeb1O8G/edrREw+30ly6SXU0ciIeKAVjH9SnQFqDzmH3lUMVnD5YD5Wy83FTIV0kr2Ir5SSZEShoP4bjV+ZurLDhasXddCeBWWHCB0/wCQ== Thilak@dataswitch.co\n\"}}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:19.4311748",
+  "operation": "Create Transformation: sn_sn_37_Transformation",
+  "method": "POST",
+  "endpoint": "transformations",
+  "requestPayload": "{
+    \"type\": \"DBT_CORE\",
+    \"paused\": false,
+    \"connection_id\": \"murkiness_quantity\",
+    \"schedule\": {
+        \"schedule_type\": \"TIME_OF_DAY\",
+        \"time_of_day\": \"02:00\",
+        \"interval\": 1440,
+        \"smart_syncing\": true
+    },
+    \"transformation_config\": {
+        \"project_id\": \"subsonic_providential\",
+        \"name\": \"sn_sn_37_Transformation\",
+        \"steps\": [
+        {
+            \"name\": \"run_dbt\",
+            \"command\": \"dbt build\"
+        }
+        ]
+    }
+}",
+  "statusCode": 201,
+  "responseBody": "{\"code\":\"Success\",\"message\":\"Transformation created successfully\",\"data\":{\"id\":\"butcher_broadness\",\"status\":\"NEW\",\"schedule\":{\"schedule_type\":\"TIME_OF_DAY\",\"days_of_week\":[\"SUNDAY\",\"FRIDAY\",\"THURSDAY\",\"WEDNESDAY\",\"MONDAY\",\"TUESDAY\",\"SATURDAY\"],\"time_of_day\":\"02:00\",\"smart_syncing\":true},\"type\":\"DBT_CORE\",\"transformation_config\":{\"project_id\":\"subsonic_providential\",\"name\":\"sn_sn_37_Transformation\",\"steps\":[{\"name\":\"run_dbt\",\"command\":\"dbt build\"}]},\"paused\":false,\"created_at\":\"2025-09-24T05:27:16.704000Z\",\"created_by_id\":\"enamel_corn\",\"output_model_names\":[\"sn_sn_37_Transformation\"]}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:21.3441729",
+  "operation": "Check Transformation Status: butcher_broadness",
+  "method": "GET",
+  "endpoint": "transformations/butcher_broadness",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"butcher_broadness\",\"status\":\"NEW\",\"schedule\":{\"schedule_type\":\"TIME_OF_DAY\",\"days_of_week\":[\"MONDAY\",\"TUESDAY\",\"FRIDAY\",\"WEDNESDAY\",\"THURSDAY\",\"SATURDAY\",\"SUNDAY\"],\"time_of_day\":\"02:00\",\"smart_syncing\":true},\"type\":\"DBT_CORE\",\"transformation_config\":{\"project_id\":\"subsonic_providential\",\"name\":\"sn_sn_37_Transformation\",\"steps\":[{\"name\":\"run_dbt\",\"command\":\"dbt build\"}]},\"paused\":false,\"created_at\":\"2025-09-24T05:27:16.704000Z\",\"created_by_id\":\"enamel_corn\",\"output_model_names\":[\"sn_sn_37_Transformation\"]}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:22.8378278",
+  "operation": "Unpause Transformation: butcher_broadness",
+  "method": "PATCH",
+  "endpoint": "transformations/butcher_broadness",
+  "requestPayload": "{
+    \"paused\": false
+}
+",
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"data\":{\"id\":\"butcher_broadness\",\"status\":\"NEW\",\"schedule\":{\"schedule_type\":\"TIME_OF_DAY\",\"days_of_week\":[\"THURSDAY\",\"SUNDAY\",\"TUESDAY\",\"WEDNESDAY\",\"SATURDAY\",\"FRIDAY\",\"MONDAY\"],\"time_of_day\":\"02:00\",\"smart_syncing\":true},\"type\":\"DBT_CORE\",\"transformation_config\":{\"project_id\":\"subsonic_providential\",\"name\":\"sn_sn_37_Transformation\",\"steps\":[{\"name\":\"run_dbt\",\"command\":\"dbt build\"}]},\"paused\":false,\"created_at\":\"2025-09-24T05:27:16.704000Z\",\"created_by_id\":\"enamel_corn\",\"output_model_names\":[\"sn_sn_37_Transformation\"]}}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:24.5066067",
+  "operation": "Run Transformation: butcher_broadness",
+  "method": "POST",
+  "endpoint": "transformations/butcher_broadness/run",
+  "requestPayload": null,
+  "statusCode": 200,
+  "responseBody": "{\"code\":\"Success\",\"message\":\"Transformation with id 'butcher_broadness' has been started\"}",
+  "success": true,
+  "errorMessage": ""
+},
+{
+  "timestamp": "2025-09-24T10:57:25.8843141",
+  "operation": "Check Transformation Runs: butcher_broadness",
+  "method": "GET",
+  "endpoint": "transformations/butcher_broadness/runs",
+  "requestPayload": null,
+  "statusCode": 404,
+  "responseBody": "{\"code\":\"NotFound\",\"message\":\"HTTP 404 Not Found\"}",
+  "success": false,
+  "errorMessage": "HTTP 404: {"code":"NotFound","message":"HTTP 404 Not Found"}"
+},
+{
+  "timestamp": "2025-09-24T10:57:27.490279",
+  "operation": "Trigger Transformation Run: butcher_broadness",
+  "method": "POST",
+  "endpoint": "transformations/butcher_broadness/run",
+  "requestPayload": "",
+  "statusCode": 409,
+  "responseBody": "{\"code\":\"Failed\",\"message\":\"Transformation job butcher_broadness is already running\"}",
+  "success": false,
+  "errorMessage": "HTTP 409: {"code":"Failed","message":"Transformation job butcher_broadness is already running"}"
+},
+{
+  "timestamp": "2025-09-24T10:57:29.343857",
+  "operation": "Get Transformation Runs",
+  "method": "GET",
+  "endpoint": "transformation_runs?transformation_id=butcher_broadness",
+  "requestPayload": null,
+  "statusCode": 404,
+  "responseBody": "{\"code\":\"NotFound\",\"message\":\"HTTP 404 Not Found\"}",
+  "success": false,
+  "errorMessage": "HTTP 404: {"code":"NotFound","message":"HTTP 404 Not Found"}"
+}
+]
