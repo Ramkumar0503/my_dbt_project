@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: sn_sn_a9
+  - name: sn_sn_a11
     database: FIVETRAN_DB
-    schema: SN_SN_A9_DEMO_SCHEMA
+    schema: SN_SN_A11_DEMO_SCHEMA
     tables:
       - name: LKPTRANS_1
       - name: DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
@@ -12,29 +12,22 @@ sources:
       - name: LKPTRANS1_1
       - name: FILTRANSOut
       - name: EXP_G20_SWP_VALUATIONSOUT1
-      - name: sn_sn_a2
-      - name: sn_sn_a1
-      - name: sn_sn_a3
-      - name: sn_sn_a6
-      - name: sn_sn_a5
-      - name: EXP_G20_SWP_VALUATIONSOUT_1_S10Out
-      - name: sn_sn_a8
-      - name: sn_sn_a7
-      - name: LKPTRANSOut
-      - name: SQ_EXP_G20_SWP_VALUATIONSOUT_301Out
       - name: EXPTRANSOut
       - name: EXP_G20_SWP_VALUATIONSOUTOut
       - name: SQ_EXP_G20_SWP_VALUATIONSOUTOut
       - name: LKPTRANS1Out
       - name: EXP_G20_SWP_VALUATIONSOUT
       - name: DSR_FILTRANSOut
+      - name: EXP_G20_SWP_VALUATIONSOUT_1_S10Out
       - name: EXPTRANS1Out
       - name: EXP_G20_SWP_VALUATIONSOUT2Out
+      - name: LKPTRANSOut
       - name: EXP_G20_SWP_VALUATIONSOUT_1Out
+      - name: SQ_EXP_G20_SWP_VALUATIONSOUT_301Out
 
-  - name: sn_sn_a10
+  - name: sn_sn_a12
     database: FIVETRAN_DB
-    schema: SN_SN_A10_ABC
+    schema: SN_SN_A12_ABC
     tables:
       - name: LKPTRANS_1
       - name: DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
@@ -43,23 +36,16 @@ sources:
       - name: LKPTRANS1_1
       - name: FILTRANSOut
       - name: EXP_G20_SWP_VALUATIONSOUT1
-      - name: sn_sn_a2
-      - name: sn_sn_a1
-      - name: sn_sn_a3
-      - name: sn_sn_a6
-      - name: sn_sn_a5
-      - name: EXP_G20_SWP_VALUATIONSOUT_1_S10Out
-      - name: sn_sn_a8
-      - name: sn_sn_a7
-      - name: LKPTRANSOut
-      - name: SQ_EXP_G20_SWP_VALUATIONSOUT_301Out
       - name: EXPTRANSOut
       - name: EXP_G20_SWP_VALUATIONSOUTOut
       - name: SQ_EXP_G20_SWP_VALUATIONSOUTOut
       - name: LKPTRANS1Out
       - name: EXP_G20_SWP_VALUATIONSOUT
       - name: DSR_FILTRANSOut
+      - name: EXP_G20_SWP_VALUATIONSOUT_1_S10Out
       - name: EXPTRANS1Out
       - name: EXP_G20_SWP_VALUATIONSOUT2Out
+      - name: LKPTRANSOut
       - name: EXP_G20_SWP_VALUATIONSOUT_1Out
+      - name: SQ_EXP_G20_SWP_VALUATIONSOUT_301Out
 
