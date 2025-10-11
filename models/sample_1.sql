@@ -6,5 +6,5 @@
 
 SELECT 
     1 AS id,
-    'Sample_2' AS name,
+    'Sample_model_1' AS name,
     current_timestamp AS created_at
