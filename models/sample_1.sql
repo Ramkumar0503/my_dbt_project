@@ -1,8 +1,5 @@
 -- models/dummy_model.sql
-{{ config(materialized='view') }}
-
--- This is a dummy dbt model that runs without any source tables.
--- It simply returns static data.
+{{ config(materialized='view1') }}
 
 SELECT 
     1 AS id,
