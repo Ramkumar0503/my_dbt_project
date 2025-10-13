@@ -1,5 +1,5 @@
 -- models/dummy_model.sql
-{{ config(materialized='table1and2') }}
+{{ config(materialized='table1and2and3') }}
 
 SELECT 
     1 AS id,
