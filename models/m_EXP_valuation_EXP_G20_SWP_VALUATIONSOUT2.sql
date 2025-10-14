@@ -34,7 +34,7 @@ With EXP_G20_SWP_VALUATIONSOUTOut as (
 		O_LEGAL_ENTITY_IDENTIFIER, 
 		_FIVETRAN_SYNCED
  from 
-{{ source('snowflake_test_19', 'EXP_G20_SWP_VALUATIONSOUT') }}
+{{ source('snowflake_test_23', 'EXP_G20_SWP_VALUATIONSOUT') }}
  ),
 
 SQ_EXP_G20_SWP_VALUATIONSOUTOut as (
@@ -53,7 +53,7 @@ SQ_EXP_G20_SWP_VALUATIONSOUTOut as (
 		O_LEGAL_ENTITY_IDENTIFIER, 
 		_FIVETRAN_SYNCED
  from 
-{{ source('snowflake_test_19', 'EXP_G20_SWP_VALUATIONSOUT') }} 
+{{ source('snowflake_test_23', 'EXP_G20_SWP_VALUATIONSOUT') }} 
  ),
 
 EXPTRANSOut as (
