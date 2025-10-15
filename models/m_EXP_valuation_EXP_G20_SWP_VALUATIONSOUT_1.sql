@@ -20,7 +20,7 @@ With SQ_EXP_G20_SWP_VALUATIONSOUT_301Out as (
 		SUCCESS, 
 		IP_ADDRESS
  from 
-{{ source('snowflake_test_23', 'EXP_G20_SWP_VALUATIONSOUT_301') }} 
+{{ source('snowflake_test_t1', 'EXP_G20_SWP_VALUATIONSOUT_301') }} 
  ),
 
 EXP_G20_SWP_VALUATIONSOUT_1_S10Out as (
@@ -35,7 +35,7 @@ EXP_G20_SWP_VALUATIONSOUT_1_S10Out as (
 		SUCCESS, 
 		IP_ADDRESS
  from 
-{{ source('snowflake_test_23', 'EXP_G20_SWP_VALUATIONSOUT_1') }}
+{{ source('snowflake_test_t1', 'EXP_G20_SWP_VALUATIONSOUT_1') }}
  ),
 
 EXPTRANS1Out as (
