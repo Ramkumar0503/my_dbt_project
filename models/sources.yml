@@ -2,6 +2,8 @@ version: 2
 
 sources:
   - name: dbo
+    database: workspace
+    schema: dbo
     description: "Raw tables from SQL Server via Fivetran"
     tables:
       - name: orders

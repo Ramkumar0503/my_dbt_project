@@ -1,5 +1,5 @@
 SELECT
-    customer_name,
+    customer_id,
     SUM(amount) AS total_amount
 FROM {{ ref('stg_orders') }}
-GROUP BY customer_name
+GROUP BY customer_id

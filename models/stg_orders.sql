@@ -1,5 +1,7 @@
 SELECT 
     order_id,
-    customer_name,
-    amount
+    customer_id,
+    amount,
+    order_date,
+    status
 FROM {{ source('dbo', 'orders') }}
