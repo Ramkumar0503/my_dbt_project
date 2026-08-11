@@ -1,0 +1,93 @@
+/* Transformation Name ==>EXP_G20_SWP_VALUATIONSOUT_1 ,Transformation Type ==>Target */
+
+{{
+	config(
+		materialized='incremental',
+		alias='EXP_G20_SWP_VALUATIONSOUT_1',
+		schema='',
+		pre_hook ="",
+		post_hook ="",
+		incremental_strategy='append')
+}}
+
+With EXP_G20_SWP_VALUATIONSOUT_1_S4Out as (
+	/* transType: "LookupSource" */
+Select SESSION_ID_o, 
+		SESSION_ID, 
+		USER_ID_o, 
+		USER_ID, 
+		DEVICE_o, 
+		DEVICE, 
+		START_TIME, 
+		END_TIME, 
+		SUCCESS, 
+		IP_ADDRESS
+ from 
+{{ source ('LKPTRANS1_1','EXP_G20_SWP_VALUATIONSOUT_1') }}
+ ),
+
+SQ_EXP_G20_SWP_VALUATIONSOUT_3011Out as (
+	/* transType: "Source" */
+Select SESSION_ID, 
+		USER_ID, 
+		DEVICE, 
+		START_TIME, 
+		END_TIME, 
+		SUCCESS, 
+		IP_ADDRESS
+ from 
+{{ source ('EXP_G20_SWP_VALUATIONSOUT_301','EXP_G20_SWP_VALUATIONSOUT_301') }} 
+ ),
+
+EXPTRANS1Out as (
+	/* transType: "Expression" */
+Select 
+	SESSION_ID as SESSION_ID,
+	 LOWER ( 'SESSION_ID_o' ) as SESSION_ID_o,
+	 USER_ID as USER_ID,
+	 LENGTH ( 'USER_ID_o' ) as USER_ID_o,
+	 DEVICE as DEVICE,
+	 UPPER ( 'DEVICE_o' ) as DEVICE_o
+From SQ_EXP_G20_SWP_VALUATIONSOUT_3011Out as SQ_EXP_G20_SWP_VALUATIONSOUT_3011Out),
+
+LKPTRANS1Out as (
+	/* transType: "Lookup Procedure" */
+Select 
+	EXPTRANS1Out.SESSION_ID_o as SESSION_ID_o_1,
+	 SESSION_ID as SESSION_ID,
+	 EXPTRANS1Out.USER_ID_o as USER_ID_o_1,
+	 USER_ID as USER_ID,
+	 EXPTRANS1Out.DEVICE_o as DEVICE_o_1,
+	 DEVICE as DEVICE,
+	 START_TIME as START_TIME,
+	 END_TIME as END_TIME,
+	 SUCCESS as SUCCESS,
+	 IP_ADDRESS as IP_ADDRESS,
+	 EXPTRANS1.SESSION_ID_o AS SESSION_ID_o_2,
+	 EXPTRANS1.USER_ID_o AS USER_ID_o_2,
+	 EXPTRANS1.DEVICE_o AS DEVICE_o_2 
+FROM
+	EXPTRANS1Out as EXPTRANS1Out 
+ LEFT JOIN EXP_G20_SWP_VALUATIONSOUT_1_S4Out
+ON
+	SESSION_ID = SESSION_ID_o
+	AND USER_ID = USER_ID_o
+	AND DEVICE = DEVICE_o
+ 
+),
+
+DSR_EXP_G20_SWP_VALUATIONSOUT_1Out as (
+	/* transType: "Expression" */
+Select 
+	LKPTRANS1Out.SESSION_ID_o as SESSION_ID,
+	 LKPTRANS1Out.USER_ID_o as USER_ID,
+	 LKPTRANS1Out.DEVICE_o as DEVICE,
+	 LKPTRANS1Out.START_TIME as START_TIME
+From LKPTRANS1Out as LKPTRANS1Out)
+
+Select 
+	SESSION_ID as SESSION_ID,
+	USER_ID as USER_ID,
+	DEVICE as DEVICE,
+	START_TIME as START_TIME 
+From DSR_EXP_G20_SWP_VALUATIONSOUT_1Out as DSR_EXP_G20_SWP_VALUATIONSOUT_1Out
