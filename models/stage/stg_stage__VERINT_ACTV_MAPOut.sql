@@ -1,0 +1,10 @@
+{{ config(materialized='view') }}
+
+SELECT
+	ACTV_MAP_ID,
+	EFF_DTTM,
+	ACTV_ID,
+	MAPPED_ACTV_ID,
+	MOD_BY,
+	CURR_IND
+FROM VERINT_ACTV_MAP

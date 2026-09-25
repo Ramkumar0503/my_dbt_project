@@ -1,34 +1,31 @@
 version: 2
 
 models:
-  - name: stg_stage__VERINT_ACTV_MAPOut
+  - name: {{ TEMP_DIR }}+VERINT_ACTV_MAP_INS
     description: "<model description>"
     tags: []
     columns:
       - name: ACTV_MAP_ID
+        description: "<column description>"
+      - name: SOR_CD
         description: "<column description>"
       - name: EFF_DTTM
         description: "<column description>"
+      - name: END_DTTM
+        description: "<column description>"
+      - name: UNQ_KEY_TXT
+        description: "<column description>"
       - name: ACTV_ID
         description: "<column description>"
       - name: MAPPED_ACTV_ID
         description: "<column description>"
       - name: MOD_BY
+        description: "<column description>"
+      - name: AUD_CRE_BY_NM
+        description: "<column description>"
+      - name: AUD_CRE_DTTM
+        description: "<column description>"
+      - name: ETL_BATCH_ID
         description: "<column description>"
       - name: CURR_IND
-        description: "<column description>"
-  - name: stg_stage__CURRENT_TIMESTAMPOut
-    description: "<model description>"
-    tags: []
-  - name: stg_stage__ACTIVITYMAPPINGOut
-    description: "<model description>"
-    tags: []
-    columns:
-      - name: ACTV_MAP_ID
-        description: "<column description>"
-      - name: ACTV_ID
-        description: "<column description>"
-      - name: MAPPED_ACTV_ID
-        description: "<column description>"
-      - name: MOD_BY
         description: "<column description>"

@@ -1,0 +1,11 @@
+{{ config(materialized='view') }}
+
+/* SubQuery FROM Source ==>ACTIVITYMAPPING */
+ /* transType: "Source" */
+ SELECT
+  ID AS ACTV_MAP_ID,
+  ACTIVITYID AS ACTV_ID,
+  MAPPEDACTIVITYID AS MAPPED_ACTV_ID,
+  MODIFIEDBY AS MOD_BY
+ FROM
+  ACTIVITYMAPPING

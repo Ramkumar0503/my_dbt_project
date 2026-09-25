@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: VERINT_ACTV_MAP
+    description: "<model description>"
+    tags: []
+    columns:
+      - name: ACTV_MAP_ID
+        description: "<column description>"
+      - name: EFF_DTTM
+        description: "<column description>"
+      - name: END_DTTM
+        description: "<column description>"
+      - name: AUD_UPD_BY_NM
+        description: "<column description>"
+      - name: AUD_UPD_DTTM
+        description: "<column description>"
+      - name: CURR_IND
+        description: "<column description>"
