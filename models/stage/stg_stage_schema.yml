@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: stg_stage__CURRENT_TIMESTAMPOut
+    description: "<model description>"
+    tags: []

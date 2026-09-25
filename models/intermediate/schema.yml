@@ -1,0 +1,144 @@
+version: 2
+
+models:
+  - name: int_s_EMPLOYEEAM_VERINT_EMP_UPD_INS
+    description: "Intermediate transformation for VERINT_EMP_UPD_INS"
+    columns:
+      - name: EMP_ID
+        description: "EMP_ID"
+      - name: SOR_CD
+        description: "SOR_CD"
+      - name: EFF_DTTM
+        description: "EFF_DTTM"
+      - name: END_DTTM
+        description: "END_DTTM"
+      - name: UNQ_KEY_TXT
+        description: "UNQ_KEY_TXT"
+      - name: EMP_TYPE_ID
+        description: "EMP_TYPE_ID"
+      - name: ASGN_PNT
+        description: "ASGN_PNT"
+      - name: EMP_NBR
+        description: "EMP_NBR"
+      - name: EMP_STRT_DTTM
+        description: "EMP_STRT_DTTM"
+      - name: EMP_END_DTTM
+        description: "EMP_END_DTTM"
+      - name: CHG_CNTR
+        description: "CHG_CNTR"
+      - name: MOD_BY
+        description: "MOD_BY"
+      - name: SPVSR_FLG
+        description: "SPVSR_FLG"
+      - name: TEAM_LEAD_FLG
+        description: "TEAM_LEAD_FLG"
+      - name: PREF_STRT_FLG
+        description: "PREF_STRT_FLG"
+      - name: FRST_NM
+        description: "FRST_NM"
+      - name: LAST_NM
+        description: "LAST_NM"
+      - name: MDL_INITL
+        description: "MDL_INITL"
+      - name: SUFX
+        description: "SUFX"
+      - name: BRTH_DT
+        description: "BRTH_DT"
+      - name: USR_NM
+        description: "USR_NM"
+      - name: USR_STS
+        description: "USR_STS"
+      - name: PROFILE_MOD_BY
+        description: "PROFILE_MOD_BY"
+      - name: PROFILE_MOD_DTTM
+        description: "PROFILE_MOD_DTTM"
+      - name: FAIL_LOGIN_CNT
+        description: "FAIL_LOGIN_CNT"
+      - name: LAST_LOGIN_DTTM
+        description: "LAST_LOGIN_DTTM"
+      - name: AUD_CRE_BY_NM
+        description: "AUD_CRE_BY_NM"
+      - name: AUD_CRE_DTTM
+        description: "AUD_CRE_DTTM"
+      - name: CURR_IND
+        description: "CURR_IND"
+      - name: ETL_BATCH_ID
+        description: "ETL_BATCH_ID"
+  - name: int_s_EMPLOYEEAM_VERINT_EMP_1
+    description: "Intermediate transformation for VERINT_EMP_1"
+    columns:
+      - name: EMP_ID
+        description: "EMP_ID"
+      - name: EFF_DTTM
+        description: "EFF_DTTM"
+      - name: END_DTTM
+        description: "END_DTTM"
+      - name: AUD_UPD_BY_NM
+        description: "AUD_UPD_BY_NM"
+      - name: AUD_UPD_DTTM
+        description: "AUD_UPD_DTTM"
+      - name: CURR_IND
+        description: "CURR_IND"
+  - name: int_s_EMPLOYEEAM_VERINT_EMP_INS
+    description: "Intermediate transformation for VERINT_EMP_INS"
+    columns:
+      - name: EMP_ID
+        description: "EMP_ID"
+      - name: SOR_CD
+        description: "SOR_CD"
+      - name: EFF_DTTM
+        description: "EFF_DTTM"
+      - name: END_DTTM
+        description: "END_DTTM"
+      - name: UNQ_KEY_TXT
+        description: "UNQ_KEY_TXT"
+      - name: EMP_TYPE_ID
+        description: "EMP_TYPE_ID"
+      - name: ASGN_PNT
+        description: "ASGN_PNT"
+      - name: EMP_NBR
+        description: "EMP_NBR"
+      - name: EMP_STRT_DTTM
+        description: "EMP_STRT_DTTM"
+      - name: EMP_END_DTTM
+        description: "EMP_END_DTTM"
+      - name: CHG_CNTR
+        description: "CHG_CNTR"
+      - name: MOD_BY
+        description: "MOD_BY"
+      - name: SPVSR_FLG
+        description: "SPVSR_FLG"
+      - name: TEAM_LEAD_FLG
+        description: "TEAM_LEAD_FLG"
+      - name: PREF_STRT_FLG
+        description: "PREF_STRT_FLG"
+      - name: FRST_NM
+        description: "FRST_NM"
+      - name: LAST_NM
+        description: "LAST_NM"
+      - name: MDL_INITL
+        description: "MDL_INITL"
+      - name: SUFX
+        description: "SUFX"
+      - name: BRTH_DT
+        description: "BRTH_DT"
+      - name: USR_NM
+        description: "USR_NM"
+      - name: USR_STS
+        description: "USR_STS"
+      - name: PROFILE_MOD_BY
+        description: "PROFILE_MOD_BY"
+      - name: PROFILE_MOD_DTTM
+        description: "PROFILE_MOD_DTTM"
+      - name: FAIL_LOGIN_CNT
+        description: "FAIL_LOGIN_CNT"
+      - name: LAST_LOGIN_DTTM
+        description: "LAST_LOGIN_DTTM"
+      - name: AUD_CRE_BY_NM
+        description: "AUD_CRE_BY_NM"
+      - name: AUD_CRE_DTTM
+        description: "AUD_CRE_DTTM"
+      - name: CURR_IND
+        description: "CURR_IND"
+      - name: ETL_BATCH_ID
+        description: "ETL_BATCH_ID"

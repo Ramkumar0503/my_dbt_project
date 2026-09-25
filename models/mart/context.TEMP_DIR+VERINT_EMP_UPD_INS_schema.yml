@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: {{ TEMP_DIR }}+VERINT_EMP_UPD_INS
+    description: "<model description>"
+    tags: []
+    columns:
+      - name: EMP_ID
+        description: "<column description>"
+      - name: SOR_CD
+        description: "<column description>"
+      - name: EFF_DTTM
+        description: "<column description>"
+      - name: END_DTTM
+        description: "<column description>"
+      - name: UNQ_KEY_TXT
+        description: "<column description>"
+      - name: EMP_TYPE_ID
+        description: "<column description>"
+      - name: ASGN_PNT
+        description: "<column description>"
+      - name: EMP_NBR
+        description: "<column description>"
+      - name: EMP_STRT_DTTM
+        description: "<column description>"
+      - name: EMP_END_DTTM
+        description: "<column description>"
+      - name: CHG_CNTR
+        description: "<column description>"
+      - name: MOD_BY
+        description: "<column description>"
+      - name: SPVSR_FLG
+        description: "<column description>"
+      - name: TEAM_LEAD_FLG
+        description: "<column description>"
+      - name: PREF_STRT_FLG
+        description: "<column description>"
+      - name: FRST_NM
+        description: "<column description>"
+      - name: LAST_NM
+        description: "<column description>"
+      - name: MDL_INITL
+        description: "<column description>"
+      - name: SUFX
+        description: "<column description>"
+      - name: BRTH_DT
+        description: "<column description>"
+      - name: USR_NM
+        description: "<column description>"
+      - name: USR_STS
+        description: "<column description>"
+      - name: PROFILE_MOD_BY
+        description: "<column description>"
+      - name: PROFILE_MOD_DTTM
+        description: "<column description>"
+      - name: FAIL_LOGIN_CNT
+        description: "<column description>"
+      - name: LAST_LOGIN_DTTM
+        description: "<column description>"
+      - name: AUD_CRE_BY_NM
+        description: "<column description>"
+      - name: AUD_CRE_DTTM
+        description: "<column description>"
+      - name: CURR_IND
+        description: "<column description>"
+      - name: ETL_BATCH_ID
+        description: "<column description>"
