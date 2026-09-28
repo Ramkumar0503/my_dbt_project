@@ -7,13 +7,25 @@ models:
     columns:
       - name: ACTV_MAP_ID
         description: "<column description>"
+      - name: SOR_CD
+        description: "<column description>"
       - name: EFF_DTTM
         description: "<column description>"
       - name: END_DTTM
         description: "<column description>"
-      - name: AUD_UPD_BY_NM
+      - name: UNQ_KEY_TXT
         description: "<column description>"
-      - name: AUD_UPD_DTTM
+      - name: ACTV_ID
+        description: "<column description>"
+      - name: MAPPED_ACTV_ID
+        description: "<column description>"
+      - name: MOD_BY
+        description: "<column description>"
+      - name: AUD_CRE_BY_NM
+        description: "<column description>"
+      - name: AUD_CRE_DTTM
+        description: "<column description>"
+      - name: ETL_BATCH_ID
         description: "<column description>"
       - name: CURR_IND
         description: "<column description>"

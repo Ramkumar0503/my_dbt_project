@@ -1,148 +1,62 @@
 {{ config(materialized='table') }}
 
-With VERINT_ACTV_MAPOut as (
-	/* SubQuery FROM Source ==>VERINT_ACTV_MAP */
-	/* transType: "Source" */
-	SELECT
-		ACTV_MAP_ID,
-	  EFF_DTTM,
-	  ACTV_ID,
-	  MAPPED_ACTV_ID,
-	  MOD_BY
-	FROM {{ ref('stg_VERINT_ACTV_MAPOut') }}
-	WHERE CURR_IND = 'Y'
+With tUnite_1Out as (
+	/* transType: "UNION" */
+	 (
+	  SELECT
+	   tFileInputDelimited_2Out.ACTV_MAP_ID,
+	   tFileInputDelimited_2Out.SOR_CD,
+	   tFileInputDelimited_2Out.EFF_DTTM,
+	   tFileInputDelimited_2Out.END_DTTM,
+	   tFileInputDelimited_2Out.UNQ_KEY_TXT,
+	   tFileInputDelimited_2Out.ACTV_ID,
+	   tFileInputDelimited_2Out.MAPPED_ACTV_ID,
+	   tFileInputDelimited_2Out.MOD_BY,
+	   tFileInputDelimited_2Out.AUD_CRE_BY_NM,
+	   tFileInputDelimited_2Out.AUD_CRE_DTTM,
+	   tFileInputDelimited_2Out.ETL_BATCH_ID,
+	   tFileInputDelimited_2Out.CURR_IND
+	  FROM
+	   {{ ref('stg_tFileInputDelimited_2__context.TEMP_DIR+VERINT_ACTV_MAP_UPD_INS') }} AS tFileInputDelimited_2Out
+	 )
+	 UNION ALL
+	 (
+	  SELECT
+	   tFileInputDelimited_3Out.ACTV_MAP_ID,
+	   tFileInputDelimited_3Out.SOR_CD,
+	   tFileInputDelimited_3Out.EFF_DTTM,
+	   tFileInputDelimited_3Out.END_DTTM,
+	   tFileInputDelimited_3Out.UNQ_KEY_TXT,
+	   tFileInputDelimited_3Out.ACTV_ID,
+	   tFileInputDelimited_3Out.MAPPED_ACTV_ID,
+	   tFileInputDelimited_3Out.MOD_BY,
+	   tFileInputDelimited_3Out.AUD_CRE_BY_NM,
+	   tFileInputDelimited_3Out.AUD_CRE_DTTM,
+	   tFileInputDelimited_3Out.ETL_BATCH_ID,
+	   tFileInputDelimited_3Out.CURR_IND
+	  FROM
+	   {{ ref('stg_tFileInputDelimited_3__context.TEMP_DIR+VERINT_ACTV_MAP_INS') }} AS tFileInputDelimited_3Out
+	 )
 ),
 
-LKP_CRCOut as (
+tMap_2Out as (
 	/* transType: "Expression" */
 	 SELECT
-	  ACTV_MAP_ID AS ACTV_MAP_ID,
-	  EFF_DTTM AS EFF_DTTM,
-	  ACTV_ID AS ACTV_ID,
-	  MAPPED_ACTV_ID AS MAPPED_ACTV_ID,
-	  MOD_BY AS MOD_BY,
-	  MD5 (
-	   CONCAT (
-	    COALESCE (ACTV_ID:: VARCHAR, ''),
-	    '|',
-	    COALESCE (MAPPED_ACTV_ID:: VARCHAR, ''),
-	    '|',
-	    COALESCE (MOD_BY:: VARCHAR, '')
-	   )
-	  ) AS CRC
+	  row6.ACTV_MAP_ID AS ACTV_MAP_ID,
+	  row6.SOR_CD AS SOR_CD,
+	  row6.EFF_DTTM AS EFF_DTTM,
+	  row6.END_DTTM AS END_DTTM,
+	  row6.UNQ_KEY_TXT AS UNQ_KEY_TXT,
+	  row6.ACTV_ID AS ACTV_ID,
+	  row6.MAPPED_ACTV_ID AS MAPPED_ACTV_ID,
+	  NULLIF (row6.MOD_BY) AS MOD_BY,
+	  row6.AUD_CRE_BY_NM AS AUD_CRE_BY_NM,
+	  row6.AUD_CRE_DTTM AS AUD_CRE_DTTM,
+	  row6.ETL_BATCH_ID AS ETL_BATCH_ID,
+	  row6.CURR_IND AS CURR_IND
 	 FROM
-	  VERINT_ACTV_MAPOut AS VERINT_ACTV_MAPOut
-),
-
-tAddCRCRow_3_Lookup_LastMatchOut as (
-	/* transType: "Expression" */
-	 SELECT
-	  DISTINCT ACTV_MAP_ID,
-	  LAST_VALUE (EFF_DTTM) OVER (
-	   PARTITION BY ACTV_MAP_ID
-	   ORDER BY
-	    ACTV_MAP_ID
-	  ) AS EFF_DTTM,
-	  LAST_VALUE (ACTV_ID) OVER (
-	   PARTITION BY ACTV_MAP_ID
-	   ORDER BY
-	    ACTV_MAP_ID
-	  ) AS ACTV_ID,
-	  LAST_VALUE (MAPPED_ACTV_ID) OVER (
-	   PARTITION BY ACTV_MAP_ID
-	   ORDER BY
-	    ACTV_MAP_ID
-	  ) AS MAPPED_ACTV_ID,
-	  LAST_VALUE (MOD_BY) OVER (
-	   PARTITION BY ACTV_MAP_ID
-	   ORDER BY
-	    ACTV_MAP_ID
-	  ) AS MOD_BY,
-	  LAST_VALUE (CRC) OVER (
-	   PARTITION BY ACTV_MAP_ID
-	   ORDER BY
-	    ACTV_MAP_ID
-	  ) AS CRC
-	 FROM
-	  LKP_CRCOut AS LKP_CRCOut
-),
-
-SRC_CRCOut as (
-	/* transType: "Expression" */
-	 SELECT
-	  ACTV_MAP_ID AS ACTV_MAP_ID,
-	  ACTV_ID AS ACTV_ID,
-	  MAPPED_ACTV_ID AS MAPPED_ACTV_ID,
-	  MOD_BY AS MOD_BY,
-	  MD5 (
-	   CONCAT (
-	    COALESCE (ACTV_ID:: VARCHAR, ''),
-	    '|',
-	    COALESCE (MAPPED_ACTV_ID:: VARCHAR, ''),
-	    '|',
-	    COALESCE (MOD_BY:: VARCHAR, '')
-	   )
-	  ) AS CRC
-	 FROM
-	  {{ ref('stg_stage__ACTIVITYMAPPINGOut') }} AS ACTIVITYMAPPINGOut
-),
-
-tMap_1Out as (
-	/* transType: "Joiner" */
-	 SELECT
-	  lnk_src.CRC AS CRC_1,
-	  lnk_ref.CRC AS CRC_2,
-	  lnk_date.EFF_DTTM AS EFF_DTTM_1,
-	  lnk_ref.EFF_DTTM AS EFF_DTTM_2,
-	  lnk_src.ACTV_ID AS ACTV_ID,
-	  lnk_date.AUD_CRE_DTTM AS AUD_CRE_DTTM,
-	  lnk_src.MOD_BY AS MOD_BY,
-	  lnk_src.MAPPED_ACTV_ID AS MAPPED_ACTV_ID,
-	  lnk_src.ACTV_MAP_ID AS ACTV_MAP_ID,
-	  lnk_date.UPDT_END_DTTM AS UPDT_END_DTTM
-	 FROM
-	  SRC_CRCOut AS SRC_CRCOut
-	  CROSS JOIN {{ ref('stg_stage__CURRENT_TIMESTAMPOut') }} AS lnk_date
-	  INNER JOIN tAddCRCRow_3_Lookup_LastMatchOut AS tAddCRCRow_3_Lookup_LastMatchOut ON ACTV_MAP_ID = ACTV_MAP_ID
-),
-
-Router_tMap_1Out1 as (
-	/* transType: "Router" */
-	 SELECT
-	  tMap_1Out.lnk_src.ACTV_MAP_ID AS lnk_src.ACTV_MAP_ID,
-	  tMap_1Out.lnk_src.ACTV_ID AS lnk_src.ACTV_ID,
-	  tMap_1Out.lnk_src.MAPPED_ACTV_ID AS lnk_src.MAPPED_ACTV_ID,
-	  tMap_1Out.lnk_src.MOD_BY AS lnk_src.MOD_BY,
-	  tMap_1Out.lnk_src.CRC AS lnk_src.CRC,
-	  tMap_1Out.lnk_date.UPDT_END_DTTM AS lnk_date.UPDT_END_DTTM,
-	  tMap_1Out.lnk_date.EFF_DTTM AS lnk_date.EFF_DTTM,
-	  tMap_1Out.lnk_date.AUD_CRE_DTTM AS lnk_date.AUD_CRE_DTTM,
-	  tMap_1Out.lnk_ref.ACTV_MAP_ID AS lnk_ref.ACTV_MAP_ID,
-	  tMap_1Out.lnk_ref.EFF_DTTM AS lnk_ref.EFF_DTTM,
-	  tMap_1Out.lnk_ref.ACTV_ID AS lnk_ref.ACTV_ID,
-	  tMap_1Out.lnk_ref.MAPPED_ACTV_ID AS lnk_ref.MAPPED_ACTV_ID,
-	  tMap_1Out.lnk_ref.MOD_BY AS lnk_ref.MOD_BY,
-	  tMap_1Out.lnk_ref.CRC AS lnk_ref.CRC
-	 FROM
-	  tMap_1Out AS tMap_1Out
-	 WHERE
-	  NOT CRC_1 = CRC_2
-),
-
-lnk_updateOut as (
-	/* transType: "Expression" */
-	 SELECT
-	  ACTV_MAP_ID AS ACTV_MAP_ID,
-	  EFF_DTTM AS EFF_DTTM,
-	  UPDT_END_DTTM AS END_DTTM,
-	  "ETL-UPDATE" AS AUD_UPD_BY_NM,
-	  AUD_CRE_DTTM AS AUD_UPD_DTTM,
-	  "N" AS CURR_IND
-	 FROM
-	  tMap_1Out AS tMap_1Out
-	 WHERE
-	  ! lnk_src.CRC.equals(lnk_ref.CRC)
+	  tUnite_1Out AS tUnite_1Out
 )
 
 SELECT *
-FROM lnk_updateOut
+FROM tMap_2Out
