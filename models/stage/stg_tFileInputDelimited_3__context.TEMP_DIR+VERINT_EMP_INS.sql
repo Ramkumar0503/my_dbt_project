@@ -1,0 +1,35 @@
+{{ config(materialized='view') }}
+
+/* transType: "Source" */
+SELECT EMP_ID, 
+		SOR_CD, 
+		EFF_DTTM, 
+		END_DTTM, 
+		UNQ_KEY_TXT, 
+		EMP_TYPE_ID, 
+		ASGN_PNT, 
+		EMP_NBR, 
+		EMP_STRT_DTTM, 
+		EMP_END_DTTM, 
+		CHG_CNTR, 
+		MOD_BY, 
+		SPVSR_FLG, 
+		TEAM_LEAD_FLG, 
+		PREF_STRT_FLG, 
+		FRST_NM, 
+		LAST_NM, 
+		MDL_INITL, 
+		SUFX, 
+		BRTH_DT, 
+		USR_NM, 
+		USR_STS, 
+		PROFILE_MOD_BY, 
+		PROFILE_MOD_DTTM, 
+		FAIL_LOGIN_CNT, 
+		LAST_LOGIN_DTTM, 
+		AUD_CRE_BY_NM, 
+		AUD_CRE_DTTM, 
+		CURR_IND, 
+		ETL_BATCH_ID
+ FROM 
+{{ source ('tFileInputDelimited_3','{{ TEMP_DIR }}+VERINT_EMP_INS') }}

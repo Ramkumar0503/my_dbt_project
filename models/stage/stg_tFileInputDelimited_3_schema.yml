@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: VERINT_EMP
+  - name: stg_tFileInputDelimited_3__context.TEMP_DIR+VERINT_EMP_INS
     description: "<model description>"
     tags: []
     columns:
